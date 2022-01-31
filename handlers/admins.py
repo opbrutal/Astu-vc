@@ -3,8 +3,6 @@ from config import BOT_NAME
 from config import que
 from pyrogram import Client, filters
 from pyrogram.types import Message
-import sira
-import DeCalls
 from cache.admins import set
 from helpers.decorators import authorized_users_only, errors
 from helpers.channelmusic import get_chat_id
