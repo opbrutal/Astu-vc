@@ -3,36 +3,37 @@ import requests
 import aiohttp
 import yt_dlp
 
-from pyrogram import Client, filters
+from pyrogram import filters, Client
 from youtube_search import YoutubeSearch
-from config import BOT_NAME
-
 
 def time_to_seconds(time):
     stringt = str(time)
-    return sum(int(x) * 60 ** i for i, x in enumerate(reversed(stringt.split(":"))))
+    return sum(int(x) * 60 ** i for i, x in enumerate(reversed(stringt.split(':'))))
 
 
-@Client.on_message(filters.command(["song"]))
+@Client.on_message(filters.command('song') & ~filters.private & ~filters.channel)
 def song(client, message):
 
-    user_id = message.from_user.id
-    user_name = message.from_user.first_name
-    rpk = "[" + user_name + "](tg://user?id=" + str(user_id) + ")"
+    user_id = message.from_user.id 
+    user_name = message.from_user.first_name 
+    rpk = "["+user_name+"](tg://user?id="+str(user_id)+")"
 
-    query = "".join(" " + str(i) for i in message.command[1:])
+    query = ''
+    for i in message.command[1:]:
+        query += ' ' + str(i)
     print(query)
-    m = message.reply("🔎 𝙋𝙧𝙤𝙘𝙚𝙨𝙨𝙞𝙣𝙜...𝙃𝙤𝙡𝙙 𝙊𝙣")
+    m = message.reply("🔥ᴄᴏɴɴᴇᴄᴛɪɴɢ ᴛᴏ Asᴛᴜ's sᴇʀᴠᴇʀ...")
     ydl_opts = {"format": "bestaudio[ext=m4a]"}
     try:
         results = YoutubeSearch(query, max_results=1).to_dict()
         link = f"https://youtube.com{results[0]['url_suffix']}"
-        # print(results)
-        title = results[0]["title"][:40]
+        #print(results)
+        title = results[0]["title"][:40]       
         thumbnail = results[0]["thumbnails"][0]
-        thumb_name = f"thumb{title}.jpg"
+        thumb_name = f'thumb{title}.jpg'
         thumb = requests.get(thumbnail, allow_redirects=True)
-        open(thumb_name, "wb").write(thumb.content)
+        open(thumb_name, 'wb').write(thumb.content)
+
 
         duration = results[0]["duration"]
         url_suffix = results[0]["url_suffix"]
@@ -40,32 +41,25 @@ def song(client, message):
 
     except Exception as e:
         m.edit(
-            "✖️ **𝙒𝙝𝙞𝙘𝙝 𝙎𝙤𝙣𝙜 𝙔𝙤𝙪 𝙒𝙖𝙣𝙩 ??**\n𝙐𝙨𝙖𝙜𝙚`/song <song name>`"
+            "ᴛʀʏ ᴏɴᴄᴇ ᴍᴏʀᴇ😁"
         )
         print(str(e))
         return
-    m.edit("`𝘿𝙤𝙬𝙣𝙡𝙤𝙖𝙙𝙞𝙣𝙜...𝙃𝙤𝙡𝙙 𝙊𝙣⏱`")
+    m.edit("Dᴏᴡɴʟᴏᴀᴅɪɴɢ...sᴇʀᴠᴇʀ ғᴏᴜɴᴅ sᴏᴍᴇᴛʜɪɴɢ")
     try:
         with yt_dlp.YoutubeDL(ydl_opts) as ydl:
             info_dict = ydl.extract_info(link, download=False)
             audio_file = ydl.prepare_filename(info_dict)
             ydl.process_info(info_dict)
-        rep = f"🎙 **Title**: [{title[:35]}]({link})\n🎬 **Source**: YouTube\n⏱️ **Duration**: `{duration}`\n👁‍🗨 **Views**: `{views}`\n📤 **By**: @{BOT_USERNAME} "
-        secmul, dur, dur_arr = 1, 0, duration.split(":")
-        for i in range(len(dur_arr) - 1, -1, -1):
-            dur += int(dur_arr[i]) * secmul
+        rep = "**🎵 𝐔𝐩𝐥𝐨𝐚𝐝𝐞𝐝 𝐁𝐲 :- ✨ [❛-𝐌𝐫'𝐒𝐦𝐎𝐤𝐞𝐫 🚬](https://t.me/Sanki_Owner) ❤️**"
+        secmul, dur, dur_arr = 1, 0, duration.split(':')
+        for i in range(len(dur_arr)-1, -1, -1):
+            dur += (int(dur_arr[i]) * secmul)
             secmul *= 60
-        message.reply_audio(
-            audio_file,
-            caption=rep,
-            thumb=thumb_name,
-            parse_mode="md",
-            title=title,
-            duration=dur,
-        )
+        message.reply_audio(audio_file, caption=rep, thumb=thumb_name, parse_mode='md', title=title, duration=dur)
         m.delete()
     except Exception as e:
-        m.edit("❌ 𝙀𝙧𝙧𝙤𝙧")
+        m.edit("**ᴛʜᴇʀᴇ ᴀʀᴇ sᴏᴍᴇ ᴘʀᴏʙʟᴇᴍ ᴀsᴋ ᴏᴡɴᴇʀ ᴛᴏ ғɪx😁💞**")
         print(e)
 
     try:
