@@ -167,8 +167,8 @@ async def play(_, message: Message):
                ],
                [
                     InlineKeyboardButton(
-                            text="sᴜᴘᴘᴏʀᴛ⭕",
-                            url=f"https://t.me/w2h_op"),
+                            text="🎧Sᴀᴠᴇ ᴜʀ ᴍᴜsɪᴄ",
+                            url=f"{durl}"),
                             
                ]
             ]
@@ -211,8 +211,8 @@ async def play(_, message: Message):
                ],
                [
                     InlineKeyboardButton(
-                            text="sᴜᴘᴘᴏʀᴛ⭕",
-                            url=f"https://t.me/w2h_op"),
+                            text="🎧Sᴀᴠᴇ ᴜʀ ᴍᴜsɪᴄ",
+                            url=f"{durl}"),
                             
                ]
             ]
@@ -232,8 +232,8 @@ async def play(_, message: Message):
                ],
                [
                     InlineKeyboardButton(
-                            text="sᴜᴘᴘᴏʀᴛ⭕",
-                            url=f"https://t.me/w2h_op"),
+                            text="🎧Sᴀᴠᴇ ᴜʀ ᴍᴜsɪᴄ",
+                            url=f"{durl}"),
                             
                ]
             ]
@@ -291,8 +291,8 @@ async def play(_, message: Message):
                ],
                [
                     InlineKeyboardButton(
-                            text="sᴜᴘᴘᴏʀᴛ⭕",
-                            url=f"https://t.me/w2h_op"),
+                            text="🎧Sᴀᴠᴇ ᴜʀ ᴍᴜsɪᴄ",
+                            url=f"{durl}"),
                             
                ]
             ]
