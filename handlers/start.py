@@ -44,14 +44,14 @@ Dᴇᴠᴇʟᴏᴘᴇᴅ Bʏ : [𝙰𝚂𝚃𝚄](https://t.me/astu_backk)**
                          " ᴏᴡɴᴇʀ ", url="https://t.me/astu_backk")
                   ],[
                     InlineKeyboardButton(
-                        "😈  ɢʀᴏᴜᴘ", url="https://t.me/shivamdemon"
+                        "😈  ɢʀᴏᴜᴘ", url="https://t.me/+PYbSPGU7pgI3NzA1"
                     ),
                     InlineKeyboardButton(
                         "✌️ sᴜᴘᴘᴏʀᴛ", url="https://t.me/w2h_op"
                     )
                 ],[ 
                     InlineKeyboardButton(
-                        "➕ ɢᴇᴛ ᴍᴇ ᴛᴏ ᴜʀ ɢʀᴏᴜᴘ➕", url="https://t.me/LEGEND_ALONE_MUSIC_BOT?startgroup=true"
+                        "➕ ɢᴇᴛ ᴍᴇ ᴛᴏ ᴜʀ ɢʀᴏᴜᴘ➕", url="https://t.me/Astumusicxd_bot?startgroup=true"
                     )]
             ]
         ),
