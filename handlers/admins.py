@@ -76,7 +76,7 @@ async def skip(_, message: Message):
         qeue.pop(0)
     if not qeue:
         return
-    await message.reply_text(""➡️ sᴋɪᴘᴘᴇᴅ..ǫᴜᴇᴜᴇᴅ ɴᴇxᴛ.")
+    await message.reply_text("➡️ sᴋɪᴘᴘᴇᴅ..ǫᴜᴇᴜᴇᴅ ɴᴇxᴛ.")
 
 
 
