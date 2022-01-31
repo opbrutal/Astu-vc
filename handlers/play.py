@@ -167,8 +167,8 @@ async def play(_, message: Message):
                ],
                [
                     InlineKeyboardButton(
-                            text="🎧Sᴀᴠᴇ ᴜʀ ᴍᴜsɪᴄ",
-                            url=f"{durl}"),
+                            text="sᴜᴘᴘᴏʀᴛ",
+                            url=f"https://t.me/shivamdemon"),
                             
                ]
             ]
