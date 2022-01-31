@@ -47,7 +47,7 @@ Dᴇᴠᴇʟᴏᴘᴇᴅ Bʏ : [𝙰𝚂𝚃𝚄](https://t.me/astu_backk)**
                         "😈  ɢʀᴏᴜᴘ", url="https://t.me/+PYbSPGU7pgI3NzA1"
                     ),
                     InlineKeyboardButton(
-                        "✌️ sᴜᴘᴘᴏʀᴛ", url="https://t.me/w2h_op"
+                        "✌️ sᴜᴘᴘᴏʀᴛ", url="https://t.me/w2hsupport"
                     )
                 ],[ 
                     InlineKeyboardButton(
